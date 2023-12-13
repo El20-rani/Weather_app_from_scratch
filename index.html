@@ -14,23 +14,35 @@
   <body>
     <div class="container">
       <header>
-        <form>
-          <input type="search" placeholder="Enter a city" id="" required />
-          <input type="submit" value="Search" />
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city"
+            required
+            class="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
         </form>
       </header>
       <main>
-        <div>
-          <h1>Addis Ababa</h1>
-          <p>
-            Wednesday 13th Dec,
-            <br />
-            3:38 pm, Rainy
-            <br />
-            Humidity: 13%, Wind Speed: 2km/hr
-          </p>
-        </div>
-        <div>🌧️ 12 °C</div>
+        <section class="data">
+          <div>
+            <h1 class="city">Addis Ababa</h1>
+            <p class="date-and-details">
+              Wednesday 13th Dec,
+              <br />
+              3:38 pm, Rainy
+              <br />
+              Humidity: <strong>13%</strong>, Wind Speed:
+              <strong>2km/hr</strong>
+            </p>
+          </div>
+          <div class="temperature">
+            <div class="icon">☔</div>
+            <div class="temp-value">12</div>
+            <div class="temp-unit">°C</div>
+          </div>
+        </section>
       </main>
       <footer>
         Coded by
@@ -39,23 +51,23 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          Eleni Z. B.
+          Eleni Z,
         </a>
-        Open-Sourced on
+        is
         <a
           href="https://github.com/El20-rani/Weather_app_from_scratch"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Github
+          Open-Sourced on Github
         </a>
-        Hosted on
+        and
         <a
           href="https://eleni-s-weather-app.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Netlify
+          Hosted on Netlify
         </a>
       </footer>
     </div>
