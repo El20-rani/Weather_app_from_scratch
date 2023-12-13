@@ -14,12 +14,13 @@
   <body>
     <div class="container">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city"
             required
             class="search-input"
+            id="search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -27,7 +28,7 @@
       <main>
         <section class="data">
           <div>
-            <h1 class="city">Addis Ababa</h1>
+            <h1 class="city" id="city">Addis Ababa</h1>
             <p class="date-and-details">
               Wednesday 13th Dec,
               <br />
@@ -71,5 +72,6 @@
         </a>
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
