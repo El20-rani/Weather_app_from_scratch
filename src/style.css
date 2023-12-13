@@ -7,6 +7,10 @@ a {
   color: #b906f0c3;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .container {
   background: #8ff1ee;
   max-width: 500px;
