@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eleni's Weather App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,24 +28,25 @@
         </form>
       </header>
       <main>
-        <section class="data">
+        <div class="data">
           <div>
             <h1 class="city" id="city"></h1>
-            <p class="date-and-details" >
-              <div id="time"></div>
+            <p class="date-and-details">
+              <span id="time"></span>,
               <span id="weather-desc"></span>
               <br />
               Humidity: <strong id="humidity"></strong>, Wind Speed:
-              <strong id="wind-speed">2km/hr</strong>
+              <strong id="wind-speed"></strong>
             </p>
           </div>
           <div class="temperature">
-            <div class="icon">☔</div>
+            <div id="icon"></div>
             <div class="temp-value" id="temp-value"></div>
             <div class="temp-unit">°C</div>
           </div>
-        </section>
+        </div>
       </main>
+
       <footer>
         Coded by
         <a

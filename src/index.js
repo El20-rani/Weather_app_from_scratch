@@ -6,8 +6,9 @@ function updateWeather(response) {
   let windspeed_elt = document.querySelector("#wind-speed");
   let time_elt = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
-  //console.log(response.data);
-
+  console.log(response.data);
+  let icon = document.querySelector("#icon");
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="icon">`;
   city_elt.innerHTML = response.data.city;
   time_elt.innerHTML = dateFormat(date);
   temperature.innerHTML = Math.round(response.data.temperature.current);
@@ -46,15 +47,10 @@ function dateFormat(date) {
   if (mins < 10) {
     mins = `0${mins}`;
   }
-  if (hrs < 12) {
-    return `${day} ${
-      months[date.getMonth()]
-    } ${date.getDate()}, ${hrs}:${mins}am`;
-  } else {
-    return `${day} ${
-      months[date.getMonth()]
-    } ${date.getDate()}, ${hrs}:${mins}pm`;
-  }
+  let dt = date.getDate();
+  let month = months[date.getMonth()];
+
+  return `${day} ${month} ${dt} ${date.getFullYear()}, ${hrs}:${mins}`;
 }
 
 function searchCity(city) {
