@@ -1,8 +1,60 @@
 function updateWeather(response) {
   let temperature = document.querySelector("#temp-value");
   let city_elt = document.querySelector("#city");
+  let desc_elt = document.querySelector("#weather-desc");
+  let humidity_elt = document.querySelector("#humidity");
+  let windspeed_elt = document.querySelector("#wind-speed");
+  let time_elt = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
+  //console.log(response.data);
+
   city_elt.innerHTML = response.data.city;
+  time_elt.innerHTML = dateFormat(date);
   temperature.innerHTML = Math.round(response.data.temperature.current);
+  desc_elt.innerHTML = response.data.condition.description;
+  humidity_elt.innerHTML = `${response.data.temperature.humidity}%`;
+  windspeed_elt.innerHTML = `${Math.round(response.data.wind.speed)}km/hr`;
+}
+
+function dateFormat(date) {
+  let mins = date.getMinutes();
+  let hrs = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "April",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let day = days[date.getDay()];
+  if (mins < 10) {
+    mins = `0${mins}`;
+  }
+  if (hrs < 12) {
+    return `${day} ${
+      months[date.getMonth()]
+    } ${date.getDate()}, ${hrs}:${mins}am`;
+  } else {
+    return `${day} ${
+      months[date.getMonth()]
+    } ${date.getDate()}, ${hrs}:${mins}pm`;
+  }
 }
 
 function searchCity(city) {
